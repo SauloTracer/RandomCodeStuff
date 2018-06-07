@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript</title>
+	<style type="text/css">
+		.active {
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	
+	<h3 id="txtTitle">Click on a list item to replace this text!</h3>
+	<hr>
+	<input type="button" value="Add new Item" id="btnAddItem">
+	<ul id="itemList">
+		<li>Python</li>
+		<li class="active">Javascript</li>
+		<li>C#</li>
+	</ul>
+
+	<script type="text/javascript">
+
+		list = document.getElementById("itemList");
+		items = document.getElementsByTagName("li");
+		btnAdd = document.getElementById("btnAddItem");
+		title = document.getElementById("txtTitle");
+
+		newItemCounter = 0;
+
+		itemClick = function(e) {
+			if(e.target.nodeName == "LI") {
+				title.innerText = e.target.innerText;
+				for (var i = 0; i < this.children.length; i++) 
+					this.children[i].classList.remove("active");
+				e.target.classList.add("active");
+			}
+		}
+
+		addItem = function() {
+			document.getElementById("itemList").innerHTML += "<li>New item " + ++newItemCounter + "</li>";
+		}
+
+		btnAdd.addEventListener("click", addItem);
+		list.addEventListener("click", itemClick);
+		
+	</script>
+</body>
+</html>
