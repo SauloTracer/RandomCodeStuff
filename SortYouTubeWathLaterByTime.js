@@ -61,3 +61,11 @@ minutes = seconds / 60;
 seconds = seconds % 60;
 
 console.log(`${days.toFixed(0)} dias, ${hours.toFixed(0)} horas, ${minutes.toFixed(0)} minutos, ${seconds.toFixed(0)} segundos`);
+
+/*
+	TODO
+
+	Adicionar itens em uma fila de execução.
+	Pegar N vídeos a partir de um período de tempo.
+	Ex.: 1h Pega os menores vídeos até completar 1 hora.
+*/
