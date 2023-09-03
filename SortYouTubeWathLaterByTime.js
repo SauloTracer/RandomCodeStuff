@@ -50,3 +50,14 @@ sortedData = data.sort((a,b) => {
 for (video of sortedData) {
 	container.append(video.elemento);
 }
+
+let seconds = data.reduce((total, item) => total+item.time, 0);
+
+days = seconds / 86400;
+seconds %= 86400;
+hours = seconds / 3600;
+seconds %= 3600;
+minutes = seconds / 60;
+seconds = seconds % 60;
+
+console.log(`${days.toFixed(0)} dias, ${hours.toFixed(0)} horas, ${minutes.toFixed(0)} minutos, ${seconds.toFixed(0)} segundos`);
